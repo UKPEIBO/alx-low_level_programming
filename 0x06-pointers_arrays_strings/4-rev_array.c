@@ -7,17 +7,17 @@
  *
  * Return: void
  */
-void reverse_array(int *a, int k)
+void reverse_array(int *a, int n)
 {
-	int m = 0, temp;
+	int i = 0, temp;
 
-	k = k - 1;
+	n = n - 1;
 
-	for (m = 0; m < k; m++)
+	for (i = 0; i < n; i++)
 	{
-		temp = a[m];
-		a[m] = a[k];
-		a[k] = temp;
-		k--;
+		temp = a[i];
+		a[i] = a[n];
+		a[n] = temp;
+		n--;
 	}
 }
