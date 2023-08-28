@@ -6,17 +6,17 @@
  * @b: a byte constant
  * @n: no of byte of the memory
  *
- * Return: pointer t
+ * Return: pointer s
  */
-char *_memset(char *t, char c, unsigned int o)
+char *_memset(char *s, char b, unsigned int n)
 {
-	int j;
+	int i;
 
-	for (j = 0; o > 0; j++)
+	for (i = 0; n > 0; i++)
 	{
-		t[j] = c;
-		o--;
+		s[i] = b;
+		n--;
 	}
 
-	return (t);
+	return (s);
 }
