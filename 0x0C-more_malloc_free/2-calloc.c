@@ -1,44 +1,24 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * string_nconcat - concatenate two strings while
- * second string is an n value
+ * _calloc - allocate memory for an array
  *
- * @s1: string one
- * @s2: string two
- * @n: no of element to concatenate from s2
+ * @nmemb: no of bloc of memory
+ * @size: size of the element (int)
  *
- * Return: poimnter to the new allocated memory
+ * Return: void pointer
  */
-char *string_nconcat(char *s1, char *s2, unsigned int n)
+void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	size_t i, j, k;
-	char *s;
+	char *q;
+	size_t j;
 
-	if (s1 == NULL)
-		i = 0;
-	else
-	{
-		for (i = 0; s1[i] != '\0'; i++)
-			;
-	}
-
-	if (s2 == NULL)
-		j = 0;
-	else
-	{
-		for (j = 0; s2[j] != '\0'; j++)
-			;
-	}
-	if (j > n)
-		j = n;
-	s = malloc(sizeof(char) * (i + j + 1));
-	if (s == NULL)
+	if (nmemb == 0 || size == 0)
 		return (NULL);
-	for (k = 0; k < i; k++)
-		s[k] = s1[k];
-	for (k = 0; k < j; k++)
-		s[k + i] = s2[k];
-	s[i + j] = '\0';
-	return (s);
+	q = malloc(nmemb * size);
+	if (q == NULL)
+		return (NULL);
+	for (j = 0; j < (nmemb * size); j++)
+		q[j] = 0;
+	return (q);
 }
